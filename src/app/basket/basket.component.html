@@ -2,8 +2,7 @@
     <h2>Liste de courses</h2>
     <mat-list role="list">
         <mat-list-item *ngFor="let food of basketList" role="listitem">
-            <span>{{food.name}} x{{food.count}}</span>
+            <span>{{food.name}} ({{food.price}}€)</span>
         </mat-list-item>
     </mat-list>
-    <h2>Total: {{total}}</h2>
 </mat-card>
