@@ -10,7 +10,6 @@ import { Food } from '../shop/shop.component';
 export class BasketComponent implements OnInit {
 
   basketList: Food[] = []
-  total: number = 0;
 
   constructor(private basket: BasketService) {}
 
