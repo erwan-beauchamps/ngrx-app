@@ -1,6 +1,7 @@
-import { BasketService } from './../basket.service';
 import { FoodService } from './../food.service';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as BasketActions from '../basket/store/basket.actions';
 
 export interface Food {
   name: string;
@@ -16,7 +17,9 @@ export class ShopComponent implements OnInit {
 
   foods: Food[] = [];
 
-  constructor(private foodService: FoodService, private basket: BasketService) {}
+  constructor(
+    private foodService: FoodService,
+    private store: Store<{ basket: {basketList: Food[]} }>) {}
 
   ngOnInit(): void {
     this.foodService.getApiFood().subscribe((result: Food[]) => {
@@ -25,7 +28,7 @@ export class ShopComponent implements OnInit {
   }
 
   addToBasket(newFood: Food): void {
-    this.basket.addToBasket(newFood);
+    this.store.dispatch(new BasketActions.AddFood(newFood));
   }
 
 

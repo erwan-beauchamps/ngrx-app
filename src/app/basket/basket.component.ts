@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { BasketService } from '../basket.service';
 import { Food } from '../shop/shop.component';
 
@@ -9,12 +11,12 @@ import { Food } from '../shop/shop.component';
 })
 export class BasketComponent implements OnInit {
 
-  basketList: Food[] = []
+  basketList!: Observable<{basketList: Food[]}>;
 
-  constructor(private basket: BasketService) {}
+  constructor(private store: Store<{ basket: {basketList: Food[]} }>) {}
 
   ngOnInit(): void {
-    this.basketList = this.basket.getBasketList();
+    this.basketList = this.store.select('basket');
   }
 
 }

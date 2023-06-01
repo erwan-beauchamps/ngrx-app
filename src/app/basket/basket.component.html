@@ -1,7 +1,7 @@
 <mat-card>
     <h2>Liste de courses</h2>
     <mat-list role="list">
-        <mat-list-item *ngFor="let food of basketList" role="listitem">
+        <mat-list-item *ngFor="let food of (basketList | async)?.basketList" role="listitem">
             <span>{{food.name}} ({{food.price}}€)</span>
         </mat-list-item>
     </mat-list>
