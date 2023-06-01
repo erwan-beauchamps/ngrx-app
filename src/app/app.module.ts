@@ -1,3 +1,4 @@
+import { BasketEffects } from './basket/store/basket.effects';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
 import { StoreModule } from '@ngrx/store';
 import { basketReducer } from './basket/store/basket.reducer';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { basketReducer } from './basket/store/basket.reducer';
     MatIconModule,
     MatButtonModule,
     StoreModule.forRoot({basket: basketReducer}),
+    EffectsModule.forRoot([BasketEffects]),
     StoreDevtoolsModule.instrument({logOnly: false}), // Environment
     MatGridListModule,
     MatCardModule,

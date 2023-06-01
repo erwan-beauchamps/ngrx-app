@@ -14,6 +14,11 @@ export function basketReducer(state = initialState, action: Action) {
                 ...state,
                 basketList: [...state.basketList, (action as BasketActions.AddFood).newFood]
             };
+        case BasketActions.BACKLOG_SUCCEED:
+            return {
+                ...state,
+                total: state.total + 1
+            };
         default: {
             return {
                 ...state
