@@ -1,4 +1,4 @@
-import { Food } from './shop/shop.component';
+import { Food } from '../shop/shop.component';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';

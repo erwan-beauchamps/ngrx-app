@@ -13,12 +13,16 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasketComponent,
-    ShopComponent
+    ShopComponent,
+    AdminComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
